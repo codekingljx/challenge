@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/RobotServicesMessage?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8000/RobotServicesMessage?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/RobotServicesMessage?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RobotServices" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestCancelAMRAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestCancelAMRAction" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestCancelAMRAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestCancelAMRActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestCancelAMRActionGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestCancelAMRActionGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestCancelAMRActionGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestCancelAMRActionGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestAMRAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAMRAction" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestAMRAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAMRActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestTempChangeAMRArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestTempChangeAMRArea" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RequestTempChangeAMRArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestTempChangeAMRAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNowAMRActionStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNowAMRActionStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNowAMRActionStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNowAMRActionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNowAMRStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNowAMRStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNowAMRStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNowAMRStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNowAMRErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNowAMRErrors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNowAMRErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNowAMRErrorsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestCancelAMRAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RequestCancelAMRAction" message="tns:IService1_RequestCancelAMRAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RequestCancelAMRActionResponse" message="tns:IService1_RequestCancelAMRAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestCancelAMRActionGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RequestCancelAMRActionGroup" message="tns:IService1_RequestCancelAMRActionGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RequestCancelAMRActionGroupResponse" message="tns:IService1_RequestCancelAMRActionGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestAMRAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RequestAMRAction" message="tns:IService1_RequestAMRAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RequestAMRActionResponse" message="tns:IService1_RequestAMRAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestTempChangeAMRArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RequestTempChangeAMRArea" message="tns:IService1_RequestTempChangeAMRArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RequestTempChangeAMRAreaResponse" message="tns:IService1_RequestTempChangeAMRArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNowAMRActionStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNowAMRActionStatus" message="tns:IService1_GetNowAMRActionStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNowAMRActionStatusResponse" message="tns:IService1_GetNowAMRActionStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNowAMRStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNowAMRStatus" message="tns:IService1_GetNowAMRStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNowAMRStatusResponse" message="tns:IService1_GetNowAMRStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNowAMRErrors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNowAMRErrors" message="tns:IService1_GetNowAMRErrors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNowAMRErrorsResponse" message="tns:IService1_GetNowAMRErrors_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestCancelAMRAction">
+      <soap:operation soapAction="http://tempuri.org/IService1/RequestCancelAMRAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestCancelAMRActionGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/RequestCancelAMRActionGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAMRAction">
+      <soap:operation soapAction="http://tempuri.org/IService1/RequestAMRAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestTempChangeAMRArea">
+      <soap:operation soapAction="http://tempuri.org/IService1/RequestTempChangeAMRArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNowAMRActionStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNowAMRActionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNowAMRStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNowAMRStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNowAMRErrors">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNowAMRErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8000/RobotServicesMessage" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

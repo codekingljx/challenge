@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RobotServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RobotServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RequestCancelAMRActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestCancelAMRActionResult" nillable="true" type="tns:RequestCancelAMRActionResult" />
+  <xs:complexType name="RequestCancelAMRActionGroupResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestCancelAMRActionGroupResult" nillable="true" type="tns:RequestCancelAMRActionGroupResult" />
+  <xs:complexType name="ArrayOfRequestAMRActionArg">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RequestAMRActionArg" nillable="true" type="tns:RequestAMRActionArg" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequestAMRActionArg" nillable="true" type="tns:ArrayOfRequestAMRActionArg" />
+  <xs:complexType name="RequestAMRActionArg">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMRId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ARMType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionArgs" nillable="true" type="tns:ArrayOfActionArg" />
+      <xs:element minOccurs="0" name="ActionGroupId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionType" type="xs:int" />
+      <xs:element minOccurs="0" name="PreviousActionId" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestAMRActionArg" nillable="true" type="tns:RequestAMRActionArg" />
+  <xs:complexType name="ArrayOfActionArg">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActionArg" nillable="true" type="tns:ActionArg" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActionArg" nillable="true" type="tns:ArrayOfActionArg" />
+  <xs:complexType name="ActionArg">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArgName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArgValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionArg" nillable="true" type="tns:ActionArg" />
+  <xs:complexType name="RequestAMRActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestAMRActionResult" nillable="true" type="tns:RequestAMRActionResult" />
+  <xs:complexType name="RequestTempChangeAMRAreaResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestTempChangeAMRAreaResult" nillable="true" type="tns:RequestTempChangeAMRAreaResult" />
+  <xs:complexType name="GetNowAMRActionStatusResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMRActionStatus" nillable="true" type="tns:AMRActionStatus" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNowAMRActionStatusResult" nillable="true" type="tns:GetNowAMRActionStatusResult" />
+  <xs:complexType name="AMRActionStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMRId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorDetail" nillable="true" type="tns:ArrayOfAMRError" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AMRActionStatus" nillable="true" type="tns:AMRActionStatus" />
+  <xs:complexType name="ArrayOfAMRError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AMRError" nillable="true" type="tns:AMRError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAMRError" nillable="true" type="tns:ArrayOfAMRError" />
+  <xs:complexType name="AMRError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMRId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeginTime" type="xs:long" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HandleResult" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HandleTime" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AMRError" nillable="true" type="tns:AMRError" />
+  <xs:complexType name="GetNowAMRStatusResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMRStatus" nillable="true" type="tns:AMRStatus" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNowAMRStatusResult" nillable="true" type="tns:GetNowAMRStatusResult" />
+  <xs:complexType name="AMRStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMRId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailInfos" nillable="true" type="tns:ArrayOfAMRStatusDetailInfo" />
+      <xs:element minOccurs="0" name="FirstTierLoadContext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondTierLoadContext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdTierLoadContext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AMRStatus" nillable="true" type="tns:AMRStatus" />
+  <xs:complexType name="ArrayOfAMRStatusDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AMRStatusDetailInfo" nillable="true" type="tns:AMRStatusDetailInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAMRStatusDetailInfo" nillable="true" type="tns:ArrayOfAMRStatusDetailInfo" />
+  <xs:complexType name="AMRStatusDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InfoName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfoValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AMRStatusDetailInfo" nillable="true" type="tns:AMRStatusDetailInfo" />
+  <xs:complexType name="GetNowAMRErrorsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMRErrors" nillable="true" type="tns:ArrayOfAMRError" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNowAMRErrorsResult" nillable="true" type="tns:GetNowAMRErrorsResult" />
+</xs:schema>
